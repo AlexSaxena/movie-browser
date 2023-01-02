@@ -1,24 +1,18 @@
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MovieCard from "./components/MovieCard";
 import SearchIcon from "./search.svg";
 
 const API_URL = "http://www.omdbapi.com/?apikey=b24517dd&";
 
-const movie1 = {
-  Title: "Batman Begins",
-  Year: "2005",
-  imdbID: "tt0372784",
-  Type: "movie",
-  Poster: "N/A",
-};
-
 function App() {
+  const [movies, setMovies] = useState([]);
+
   const movieQuery = async (title) => {
     const response = await fetch(`${API_URL}s=${title}`);
     const data = await response.json();
 
-    console.log(data.Search);
+    setMovies(data.Search);
   };
 
   useEffect(() => {
@@ -38,9 +32,17 @@ function App() {
         <img src={SearchIcon} alt="search" onClick={() => {}} />
       </div>
 
-      <div className="container">
-        <MovieCard movie1={movie1} />
-      </div>
+      {movies?.length > 0 ? (
+        <div className="container">
+          {movies.map((movie) => (
+            <MovieCard movie={movie} />
+          ))}
+        </div>
+      ) : (
+        <div className="empty">
+          <h2>No Movies Found</h2>
+        </div>
+      )}
     </div>
   );
 }
