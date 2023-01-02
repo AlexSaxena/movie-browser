@@ -1,16 +1,16 @@
 import "./App.css";
 import { useEffect } from "react";
-import Movie from "./components/MovieComp";
+import MovieCard from "./components/MovieCard";
 
 const API_URL = "http://www.omdbapi.com/?apikey=b24517dd&";
 
-// const movie1 = {
-//   Title: "Batman Begins",
-//   Year: "2005",
-//   imdbID: "tt0372784",
-//   Type: "movie",
-//   Poster: "N/A",
-// };
+const movie1 = {
+  Title: "Batman Begins",
+  Year: "2005",
+  imdbID: "tt0372784",
+  Type: "movie",
+  Poster: "N/A",
+};
 
 function App() {
   const movieQuery = async (title) => {
@@ -38,7 +38,7 @@ function App() {
       </div>
 
       <div className="container">
-        <Movie />
+        <MovieCard movie1={movie1} />
       </div>
     </div>
   );
