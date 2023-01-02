@@ -19,14 +19,24 @@ export default function MovieCard({ movie1 }) {
           }
           alt={movie1.Title}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+        <CardContent
+          sx={{
+            backgroundColor: "#343739",
+            boxShadow: " 0px 13px 10px -7px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            color="whitesmoke"
+          >
             {movie1.Title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="orangered">
             Type: {movie1.Type}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="orangered">
             Released: {movie1.Year}
           </Typography>
         </CardContent>
