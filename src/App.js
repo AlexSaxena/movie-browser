@@ -1,10 +1,16 @@
 import "./App.css";
-import logo from "./logo.svg";
 import { useEffect } from "react";
-
-// Movie: Key -> b24517dd
+import Movie from "./components/MovieComp";
 
 const API_URL = "http://www.omdbapi.com/?apikey=b24517dd&";
+
+// const movie1 = {
+//   Title: "Batman Begins",
+//   Year: "2005",
+//   imdbID: "tt0372784",
+//   Type: "movie",
+//   Poster: "N/A",
+// };
 
 function App() {
   const movieQuery = async (title) => {
@@ -15,7 +21,7 @@ function App() {
   };
 
   useEffect(() => {
-    movieQuery("Spiderman");
+    movieQuery("Batman");
   }, []);
 
   return (
@@ -31,7 +37,9 @@ function App() {
         <button onClick={() => {}}>Search</button>
       </div>
 
-      <div className="container"></div>
+      <div className="container">
+        <Movie />
+      </div>
     </div>
   );
 }
