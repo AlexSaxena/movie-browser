@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect } from "react";
 import MovieCard from "./components/MovieCard";
+import SearchIcon from "./search.svg";
 
 const API_URL = "http://www.omdbapi.com/?apikey=b24517dd&";
 
@@ -34,7 +35,7 @@ function App() {
           value="Lord Of The Rings"
           onChange={() => {}}
         />
-        <button onClick={() => {}}>Search</button>
+        <img src={SearchIcon} alt="search" onClick={() => {}} />
       </div>
 
       <div className="container">
