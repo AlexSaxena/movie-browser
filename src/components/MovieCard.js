@@ -1,32 +1,36 @@
-import React from "react";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
 
-const MovieCard = ({ movie1 }) => {
-  console.log("props ->", movie1);
-
+export default function MovieCard({ movie1 }) {
   return (
-    <div className="movie">
-      <div>
-        <p>{movie1.Year}</p>
-        <p>Test</p>
-      </div>
-
-      <div>
-        <img
-          src={
+    <Card sx={{ maxWidth: 400 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="300"
+          image={
             movie1.Poster !== "N/A"
               ? movie1.Poster
               : "https://via.placeholder.com/400"
           }
           alt={movie1.Title}
         />
-      </div>
-
-      <div>
-        <span>{movie1.Type}</span>
-        <h3>{movie1.Title}</h3>
-      </div>
-    </div>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {movie1.Title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Type: {movie1.Type}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Released: {movie1.Year}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
-};
-
-export default MovieCard;
+}
