@@ -5,24 +5,23 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-export default function MovieCard({ movie1 }) {
+export default function MovieCard({ movie }) {
   return (
-    <Card sx={{ maxWidth: 400 }}>
+    <Card sx={{ width: 400, height: 400, backgroundColor: "#343739" }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="300"
+          height="250"
           image={
-            movie1.Poster !== "N/A"
-              ? movie1.Poster
+            movie.Poster !== "N/A"
+              ? movie.Poster
               : "https://via.placeholder.com/400"
           }
-          alt={movie1.Title}
+          alt={movie.Title}
         />
         <CardContent
           sx={{
             backgroundColor: "#343739",
-            boxShadow: " 0px 13px 10px -7px rgba(0, 0, 0, 0.1)",
           }}
         >
           <Typography
@@ -31,13 +30,13 @@ export default function MovieCard({ movie1 }) {
             component="div"
             color="whitesmoke"
           >
-            {movie1.Title}
+            {movie.Title}
           </Typography>
           <Typography variant="body2" color="orangered">
-            Type: {movie1.Type}
+            Type: {movie.Type}
           </Typography>
           <Typography variant="body2" color="orangered">
-            Released: {movie1.Year}
+            Released: {movie.Year}
           </Typography>
         </CardContent>
       </CardActionArea>
