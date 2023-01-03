@@ -4,10 +4,13 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+import { favArray } from "./favourites";
 
 export default function MovieCard({ movie }) {
   return (
-    <Card sx={{ width: 400, height: 400, backgroundColor: "#343739" }}>
+    <Card sx={{ width: 400, miHeight: 420, backgroundColor: "#343739" }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -38,6 +41,17 @@ export default function MovieCard({ movie }) {
           <Typography variant="body2" color="orangered">
             Released: {movie.Year}
           </Typography>
+          <Button
+            variant="contained"
+            endIcon={<SendIcon />}
+            onClick={() => {
+              alert(movie.Title + " Added to Favorites");
+              favArray.push({ movie });
+              console.log(favArray);
+            }}
+          >
+            Add to Favorites
+          </Button>
         </CardContent>
       </CardActionArea>
     </Card>
