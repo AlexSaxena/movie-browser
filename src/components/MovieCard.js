@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
-import { favArray } from "./favourites";
+import { favArray } from "./favouritesArray";
 
 export default function MovieCard({ movie }) {
   return (
@@ -46,8 +46,8 @@ export default function MovieCard({ movie }) {
             endIcon={<SendIcon />}
             onClick={() => {
               alert(movie.Title + " Added to Favorites");
+              movie.id = Math.floor(Math.random() * 100);
               favArray.push({ movie });
-              console.log(favArray);
             }}
           >
             Add to Favorites
