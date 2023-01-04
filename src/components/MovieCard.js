@@ -45,12 +45,12 @@ export default function MovieCard({ movie }) {
             variant="contained"
             endIcon={<SendIcon />}
             onClick={() => {
-              alert(movie.Title + " Added to Favorites");
+              alert(movie.Title + " Added to Watchlist");
               movie.id = Math.floor(Math.random() * 100);
               favArray.push({ movie });
             }}
           >
-            Add to Favorites
+            Add to Watchlist
           </Button>
         </CardContent>
       </CardActionArea>
