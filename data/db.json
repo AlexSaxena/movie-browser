@@ -1,0 +1,31 @@
+{
+  "test": {
+    "name": "testing"
+  },
+  "movies": [
+    {
+      "Title": "Batman",
+      "Year": "2002",
+      "Type": "Movie",
+      "id": 1
+    },
+    {
+      "Title": "The Wasp",
+      "Year": "2012",
+      "Type": "Movie",
+      "id": 2
+    },
+    {
+      "Title": "Lotr",
+      "Year": "1337",
+      "Type": "Movie",
+      "id": 3
+    },
+    {
+      "Title": "Test",
+      "Year": "2050",
+      "Type": "Film",
+      "id": 4
+    }
+  ]
+}
